@@ -21,7 +21,7 @@ directives.directive('msgtip', ['$timeout', function($timeout){
 	// Runs during compile
 	return {
 		restrict: 'E', 
-		templateUrl: 'module/loader.html',
+		templateUrl: 'template/loader.html',
 		replace: true,
 		link: function(scope, iElm, iAttrs, controller) {
 			scope.info = {showloader:false,tips:''};

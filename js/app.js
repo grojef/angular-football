@@ -5,11 +5,11 @@ app.config(function($stateProvider, $urlRouterProvider,$locationProvider) { ///*
     $urlRouterProvider.otherwise("/list");
     $stateProvider.state("list", {
             url: "/list",
-            templateUrl: "module/raceList.html",
+            templateUrl: "template/raceList.html",
             controller:'RaceListController'
         }) .state("bet", {
             url:"/bet",
-            templateUrl:'module/raceBet.html',
+            templateUrl:'template/raceBet.html',
             controller: 'BetController'
         });
 }).run(['$rootScope', '$location',function($rootScope, $location) { 
