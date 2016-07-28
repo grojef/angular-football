@@ -1,0 +1,83 @@
+<div ng-swipe-left="swipeleft();">
+	<div id="jq_indent">
+		<ul class="k-tabs-hd aequilatus">
+			<li>猜一场</li>
+			<li class="active">全部比赛</li>
+			<li ui-sref="bet">更多玩法</li>
+		</ul>
+		<div class="k-tabs bg_f5" style="top:4.3rem; bottom:7.7rem;">
+			<div class="all_match_tabs">
+				<div class="all_match">
+					<div class="match_hd bg_ff justify" ng-click="toggleUl(20150422);">
+						<p><i class="iconfont gray fs30">&#xe607;</i> 2015-02-09 星期一 13场比赛</p>
+						<i class="iconfont gray_er">&#xe604;</i>
+						<a class="recover" href="javascript:;"  ng-show="showRecover" ng-class="{pulse:recoverStyle}" ng-click="recover($event);">恢复</a>
+					</div>
+					<ul class="match_list" ng-hide="ul[20150422]">
+						<li ng-repeat="item in racelist" ng-hide="li[item.matchNo]">
+							<div class="match_bd" >
+								<div class="game_box">
+									<div class="game_tit tac" ng-click="showDetail(item.matchNo);">
+										<div class="game_tit_con gray">
+											<p>{{::item.matchName}}</p>
+											<p>{{::item.endSaleTimeStr | limitTo: -5}}截止</p>
+											<p class="mt10"><i class="iconfont fs30 pink">&#xe618;</i></p>
+										</div>
+									</div>
+									<div class="game_bd">
+										<table class="ft_tb" width="100%">
+											<thead>
+												<tr>
+													<td align="center"><a class="games_nums" ng-click="hideli(item.matchNo);" href="javascript:void(0);">{{::item.matchNo}}</a></td>
+													<td align="center"><span class="fs20">{{::item.homeTeam}}(主)</span></td>
+													<td align="center"><span class=" gray">VS</span></td>
+													<td align="center"><span class="">{{::item.guestTeam}}</span></td>
+												</tr>
+											</thead>
+											<tbody>
+
+												<tr ng-if="item.spfopen">
+													<td align="center">0</td>
+													<td align="center">
+													<div class="sucs_fail" ng-class="{select: selectObj[item.matchNo]['23']}" ng-click="selectItem(item,'23');"><span class="name">主胜</span>1.82</div></td>
+													<td align="center"><div class="sucs_fail" ng-click="selectItem(item,'21');" ng-class="{select: selectObj[item.matchNo]['21']}"><span class="name">主平</span> 1.82</div></td>
+													<td align="center"><div class="sucs_fail" ng-click="selectItem(item,'20');" ng-class="{select: selectObj[item.matchNo]['20']}"><span class="name">主负</span> 1.82</div></td>
+												</tr>
+												<tr ng-if="item.rspfopen">
+													<td align="center"><span class="red">{{item.concede}}</span></td>
+													<td align="center"><div class="sucs_fail" ng-click="selectItem(item,'13');" ng-class="{select: selectObj[item.matchNo]['13']}"><span class="name">胜</span> 1.82</div></td>
+													<td align="center"><div class="sucs_fail" ng-click="selectItem(item,'11');" ng-class="{select: selectObj[item.matchNo]['11']}"><span class="name">平</span> 1.82</div></td>
+													<td align="center"><div class="sucs_fail" ng-click="selectItem(item,'10');" ng-class="{select: selectObj[item.matchNo]['10']}"><span class="name">胜</span> 1.82</div></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+							<div class="match_ft" ng-show="detailShow[item.matchNo]">
+								<table width="100%">
+									<tr>
+										<td width="22%" valign="top"><span class="">本场体验</span></td>
+										<td><p>跨联赛三连败,巴萨罗那近期望反弹.近7次交战,巴萨罗那5胜1平1负.</p></td>
+									</tr>
+								</table>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="pick-area">
+		<div class="pick-toolbar">
+			<div class="pick-bets-con">
+				<p class="c666 fs24">开奖结果不包含加时赛及点球大战</p>
+			</div>
+			<div class="tc-btn-group">
+				<a href="javascript:void(0);" class="tc-btn tc-btn-info fs24">筛选比赛</a>
+				<a href="javascript:void(0);" ng-click="addCart()" class="tc-btn tc-btn-large tc-btn-primary">{{buttonMsg}}</a>
+			</div>
+		</div>
+	</div>
+</div>
