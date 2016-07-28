@@ -12,16 +12,6 @@ app.config(function($stateProvider, $urlRouterProvider,$locationProvider) { ///*
             templateUrl:'module/raceBet.html',
             controller: 'BetController'
         });
-/*    $routeProvider.when('/list', {
-        templateUrl: 'module/raceList.html',
-        controller: 'RaceListController'
-    }).when('/bet',{
-    	templateUrl:'module/raceBet.html',
-    	controller: 'BetController'
-    }).otherwise({
-        redirectTo: '/list'
-    })
-    $locationProvider.html5Mode(true);*/
 }).run(['$rootScope', '$location',function($rootScope, $location) { 
     $rootScope.$on('$stateChangeStart', function(evt, next, current) {
         $rootScope.$emit("openLoader");
