@@ -8,6 +8,6 @@ football for angular
 Open [https://www.github.com/xiaoke88/react-football] to view it in browser
 
 
-# angular 1.x
+# vue2.x
 
-Open [https://github.com/xiaoke88/angular-football] to view it in browser
+Open [https://github.com/xiaoke88/vue-football] to view it in browser
